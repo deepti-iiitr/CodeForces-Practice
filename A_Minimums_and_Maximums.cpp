@@ -36,7 +36,10 @@ ll MOD = 10e+7;
 void solve(){
     int l1,r1,l2,r2;
     cin>>l1>>r1>>l2>>r2;
-    
+    if(max(l1,l2) <= min(r1,r2))
+	  cout<<max(l1,l2)<<endl;
+	else
+	   cout<<l2+l1<<endl;
 }
 int main()
 {
