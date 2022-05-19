@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 #define endl ("\n")
 
@@ -32,28 +31,33 @@ ll MOD = 10e+7;
 #define all(x) (x).begin(), (x).end()
 #define sz(x) ((ll)(x).size())
 
-int solve2(string& s1, string& s2){
-	int res = 0;
-    for(int i = 0; i < s1.size(); ++i) {
-        res += abs(s1[i] - s2[i]);
-    }
-    return res;
-}
 
 void solve(){
-    int n,m;
-    cin>>n>>m;
-    vector<string> s(n);
-    for(int i = 0; i < n; ++i) {
-            cin >> s[i];
-        }
-	int ans=INT_MAX;
-    for(int i = 0; i < n; ++i){
-		for(int j=i+1;j<n;j++){
-			ans=min(ans, solve2(s[i], s[j]));
-		}
-	}
-	cout<<ans<<endl;
+   ll n;
+   cin>>n;
+   int a[n];
+   for(int i=0;i<n;i++)
+      cin>>a[i];
+   sort(a,a+n);
+   if(a[0]==0)
+     {  int f=0;
+        for(int i=0;i<n;i++){
+          if(a[i]==0)
+            f++;
+      } 
+      cout<<n-f<<endl;
+     }
+    else{
+        bool f=false;
+      for(int i=0;i<n-1;i++){
+          if(a[i]==a[i+1])
+            f=true;
+      }  
+      if(f)
+        cout<<n<<endl;
+       else
+         cout<<n+1<<endl;
+    }
 }
 int main()
 {
